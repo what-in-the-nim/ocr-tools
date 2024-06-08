@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-tools"
+authors = [
+    {name="Chatcharin Sangbutsarakum", email="chatcharinsang@gmail.com"}
+]
+description = "OCR tools for annotator."
+requires-python = ">= 3.10"
+license = {text = "MIT License"}
+readme = {file = "README.md", content-type = "text/markdown"}
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.urls]
+Repository = "https://github.com/what-in-the-num/ocr-tools.git"
+Issues = "https://github.com/what-in-the-nim/ocr-tools/issues"
+
+
+[tool.setuptools]
+package-dir = {""= "src"} 
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
