@@ -1,2 +1,2 @@
-# our-tools
+# ocr-tools
 OCR tools for annotator
