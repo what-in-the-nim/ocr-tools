@@ -9,23 +9,23 @@ from ocr_tools.via import converter
 st.title("Convert PDF to Images")
 st.write("This page convert each page in `pdf` file into `png` images.")
 
-st.subheader("Examples")
-st.write("**Input:** Multiple `pdf` files")
-st.code("`1.pdf`, `2.pdf`, ...")
-st.write("**Output:** Zip file containing a `png` images of each `pdf` file.")
-st.code(
-    """
-    images.zip
-    ├── 1_0.png
-    ├── 1_1.png
-    ├── 1_2.png
-    ├── ...
-    ├── 2_0.png
-    ├── 2_1.png
-    ├── 2_2.png
-    └── ...
-    """
-)
+with st.expander("Example"):
+    st.write("**Input:** Multiple `pdf` files")
+    st.code("`1.pdf`, `2.pdf`, ...")
+    st.write("**Output:** Zip file containing a `png` images of each `pdf` file.")
+    st.code(
+        """
+        images.zip
+        ├── 1_0.png
+        ├── 1_1.png
+        ├── 1_2.png
+        ├── ...
+        ├── 2_0.png
+        ├── 2_1.png
+        ├── 2_2.png
+        └── ...
+        """
+    )
 
 # Create a form to prepare the parameters.
 st.subheader("Parameters")
