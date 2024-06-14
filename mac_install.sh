@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Create a virtual environment if not already created
-if [ ! -d "ocrtools" ]; then
-    python3 -m venv ocrtools
+if [[ ! -d "ocrtools" ]]; then
+	python3 -m venv ocrtools
 fi
 
 # Activate the virtual environment
