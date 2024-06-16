@@ -1,6 +1,7 @@
 import io
 import os
 import zipfile
+from pathlib import Path
 
 import streamlit as st
 
@@ -76,6 +77,9 @@ status_bar = st.status("Converting PDF(s) to images...", expanded=True)
 status_bar.write("Creating zip file...")
 zip_buffer = io.BytesIO()
 with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+    # Create directory.
+    main_dir = Path(zip_filename).stem
+    zip_file.writestr(f"{main_dir}/", "")
     # Iterate each files
     status_bar.write("Converting images...")
     progress_bar = status_bar.progress(0, text="Processing...")
@@ -97,7 +101,9 @@ with zipfile.ZipFile(zip_buffer, "w") as zip_file:
         for page_number, image in enumerate(images):
             page_buffer = io.BytesIO()
             image.save(page_buffer, format="png")
-            zip_file.writestr(f"{base_name}_{page_number}.png", page_buffer.getvalue())
+            zip_file.writestr(
+                f"{main_dir}/{base_name}_{page_number}.png", page_buffer.getvalue()
+            )
 
 # Create download button.
 status_bar.write("Finished!")
