@@ -5,7 +5,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from ocr_tools.via import converter
+from ocr_tools import converter
 
 st.title("Convert PDF to Images")
 st.write("This page convert each page in `pdf` file into `png` images.")
